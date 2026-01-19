@@ -1,22 +1,31 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 #include "tokenizer.h"
-/*typedef struct grow{
-char cmd;
-struct grow* n;
+/*typedef struct n{
+char *cmd;
+struct node* n;
+//struct grow* p;
 }node;*/
 
-int token_cmd(char* arr){
-    char *t=strtok(arr," ");
-    char *cmd[50];
-    int i=0;
-    while(t != NULL){
-        cmd[i++]=t;
-        t=strtok(NULL," ");
-    }
-    for(int j=0;j<i;j++){
-        printf("%s\n",cmd[j]);
-    }
-    return 0;
+node *node_cmd(const char *token){
+	node *newnode = malloc(sizeof(node));
+	if(!newnode) return NULL;
+	newnode -> cmd = strdup(token);
+	newnode -> next = NULL;
+	return newnode;
 }
-//node* token_cmd()
+node *append_cmd(node **head,node *nex){
+	if(!nex) return *head;
+	if(*head == NULL){
+		*head = nex;
+	return *head;
+	}
+	node *temp = *head;
+	while(temp ->next ){
+		temp = temp->next;
+	}
+	temp->next = nex;
+	return *head;
+	
+}

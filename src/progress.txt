@@ -1,0 +1,1 @@
+in this part i ahve changed the old parser to the new parser , old parser contained the bunch arrays doing the job which was unhealthy for the memory but now the work is being done by the linked lists now i can move further towards the working of a command;

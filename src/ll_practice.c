@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main() {
@@ -12,23 +12,29 @@ int main() {
 
     free(str);
     return 0;
-}
-/*#include<stdio.h>
+}*/
+#include<stdio.h>
 #include<stdlib.h>
 typedef struct node {
 int value;
 struct node* next;
 } n;
+n* insertion(int val, n* node){
+	n* newnode = malloc(sizeof(n));
+	newnode -> value = val;
+	newnode ->next = node;
+
+}
 
 int main(){
 	n* head;
-	n* n1 =malloc(sizeof(n));
-	n* n2 =malloc(sizeof(n));
+	//* n1 = newnode(30,n2);
+	//n* n2 = newnode(40,n3);
+	n* n3 = insertion(50,NULL);
+	n* n2 = insertion(40,n3);
 
-	n1 -> value = 30;
-	n1 ->next = n2;
-	n2 -> value = 40;
-	n2 ->next = NULL;
+	n* n1 = insertion(30,n2);
+
 	head = n1;
 	n* temp = head;
 	while(temp!=NULL){
@@ -37,4 +43,4 @@ int main(){
 	}
 	return 0;
 
-}*/
+}
