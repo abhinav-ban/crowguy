@@ -7,4 +7,4 @@ typedef struct n {
 
 node *node_cmd(const char *token);
 node *append_cmd(node **head, node *nex);
-
+void printer(node *head);

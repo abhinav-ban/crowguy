@@ -1,12 +1,5 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include "tokenizer.h"
-/*typedef struct n{
-char *cmd;
-struct node* n;
-//struct grow* p;
-}node;*/
+#include "headers.h"
+
 
 node *node_cmd(const char *token){
 	node *newnode = malloc(sizeof(node));
@@ -19,7 +12,7 @@ node *append_cmd(node **head,node *nex){
 	if(!nex) return *head;
 	if(*head == NULL){
 		*head = nex;
-	return *head;
+		return *head;
 	}
 	node *temp = *head;
 	while(temp ->next ){
@@ -28,4 +21,14 @@ node *append_cmd(node **head,node *nex){
 	temp->next = nex;
 	return *head;
 	
+}
+
+void printer(node *head){
+	if(!head) return;// void function cannot return null
+	node *temp = head;
+	while(temp){
+		printf("%s\t",temp->cmd);
+		temp = temp->next;
+	}
+
 }
