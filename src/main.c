@@ -2,6 +2,7 @@
 
 
 int main(){
+	// this is array parsed repo
 	node *head = NULL;
 	char *str = NULL,choice,input[10];//fix the input size problem it is taking much more memory:
 	int buff = 50;size_t n = 0;
@@ -21,9 +22,10 @@ int main(){
 			
 			node *newnode = node_cmd(t);
 			append_cmd(&head,newnode);
-			//printer(head);
+			
 			t=strtok(NULL," ");
-		}printer(head);
+		}//printer(head);
+		executer_cmd(list_to_arr(head));
 
 		//free(str);
 		

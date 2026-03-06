@@ -1,6 +1,6 @@
 #include "headers.h"
 
-node *list_to_arr(node *head){
+char *list_to_arr(node *head){
 	int count;
 	node *temp =head;
 
@@ -14,14 +14,14 @@ node *list_to_arr(node *head){
 		arr[i] = temp->cmd;
 		temp = temp->next;
 	}
-
+	return *arr;
 }
 
-/*int executer_cmd(char **args){
+int executer_cmd(char *args){
 	for(int i=0;i<builtin_count;i++){
 		if(strcmp(builtins[i].name,args[0])==0){
-			return builtins[i].func(args);
+			return builtins[i].fun(*args);
 		}
 	}
 	return 1;
-}*/
+}

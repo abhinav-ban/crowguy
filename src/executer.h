@@ -1,3 +1,4 @@
 #pragma once
 
-node *list_to_arr(node *head);
+char *list_to_arr(node *head);
+int executer_cmd(char *args);
