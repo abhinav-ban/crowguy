@@ -1,0 +1,7 @@
+history
+history
+shell
+ls
+history
+cd
+gotham
